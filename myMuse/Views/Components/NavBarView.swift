@@ -64,7 +64,7 @@ struct NavBar: View {
                             .font(.largeTitle) // Optional: Set the font size of the image
                     }
                     .fullScreenCover(isPresented: $isPresentingWriteView) {
-                        WritePost(isPresented: $isPresentingWriteView)
+                        WritePostView(isPresented: $isPresentingWriteView)
                             }
             
             Spacer()

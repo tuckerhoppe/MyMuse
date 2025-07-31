@@ -54,7 +54,7 @@ struct UserProfileView: View {
             
             // posts populated from user's database
             // Maybe I should add a posts view?
-            PostList(homeview: false)
+            PostListView(homeview: false)
             NavBar()
         }
         .background(LinearGradient(gradient: Gradient(colors: ColorsManager.shared.backgroundGradient), startPoint: .top, endPoint: .bottom))

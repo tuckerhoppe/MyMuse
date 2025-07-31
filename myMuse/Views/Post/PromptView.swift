@@ -15,21 +15,26 @@ struct PromptView: View {
     let textColor = ColorsManager.shared.textColorFor
     var body: some View {
         
-        VStack(alignment:.leading, spacing: 0){
-            // Prompt
+        VStack(alignment:.leading, spacing: 8){
+            // Title Header
             HStack {
+                Image(systemName: "lightbulb.fill") // icon for visual interest
+                    .foregroundStyle(ColorsManager.shared.accentColor)
+                
                 Text("Today's Prompt:")
-                    .foregroundColor(textColor)
-                    .bold()
+                    .fontWeight(.bold)
                 
                 Spacer()
             }
+            .font(.subheadline)
             
             
             Text(promptText)
-                .foregroundColor(textColor)
+                .font(.title3) // Makes the prompt text stand out more
+                .fontWeight(.semibold)
+                .lineLimit(3) // Prevents extremely long prompts
             
-            // Add Button
+            // TODO: Add Button
             //NavigationLink(destination: WritePost()) {
                 // add a plus symbol
                 //Circle()
@@ -37,10 +42,10 @@ struct PromptView: View {
            // }
             
         }
-        .padding()
-        .background(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .top, endPoint: .bottom))
-        .frame(width: 300)
+        .padding(16)
+        .background(.ultraThinMaterial)
         .cornerRadius(20.0)
+        .padding(.horizontal)
         
     }
 }

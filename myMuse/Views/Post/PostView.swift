@@ -21,53 +21,35 @@ struct PostView: View {
     var promptText: String?
     
     var body: some View {
-        
-        // Use GeometryReader to get the screen width
-        
-        // VSTACK
-        VStack(alignment: .leading) {
-            // User picture User name
+        VStack(alignment: .leading, spacing: 12) {
+            // User Header
             HStack {
-                ProfileImageView(image: profileImage)
-                    //.image.resizable()
-                    //.frame(width: 50, height: 50)
-            
+                ProfileImageView(image: profileImage, size: 40)
                 Text(username)
-                    .foregroundColor(textColor)
-                    .onTapGesture {
-                                            // Handle tap gesture on username
-                                            print("Username tapped!")
-                                        }
+                    .fontWeight(.semibold)
                 Spacer()
             }
-            // Text
-            Text(postText ?? "Default Post")
-                .font(.caption)
-                .foregroundColor(textColor)
-                //.fixedSize(horizontal: false, vertical: true)
-                
-                
-            // view prompt button
-            Text(promptText ?? "Default Prompt")
-                .font(.caption2)
-                .foregroundColor(textColor)
-                .italic()
-                
-                
-                
             
-                
-            // like & comment buttons
+            // Main Post Content
+            Text(postText ?? "This is where the post content will appear.")
+                .font(.body)
+                .lineSpacing(4)
+            
+            // Prompt Reference
+            HStack(spacing: 8) {
+                Image(systemName: "book.closed.fill")
+                    .font(.caption)
+                Text(promptText ?? "In response to a prompt")
+                    .font(.caption)
+                    .italic()
+            }
+            .foregroundStyle(.secondary)
+            
         }
         .padding()
-        .background(LinearGradient(gradient: Gradient(colors: gradientColors), startPoint: .top, endPoint: .bottom))
-        .frame(width: 300)
-        .cornerRadius(20.0)
-        
-        
-        
-        //.padding(.horizontal)
-        
+        .background(.ultraThinMaterial) // The key change for the glass effect
+        .cornerRadius(20)
+        .padding(.horizontal)
     }
     
         

@@ -8,7 +8,7 @@
 import SwiftUI
 import CloudKit
 
-struct PostList: View {
+struct PostListView: View {
     var homeview: Bool = true
     @State private var posts: [CKRecord] = []
     //private let cloudKitManager = CloudKitManager()
@@ -27,7 +27,9 @@ struct PostList: View {
             }*/
             ScrollView {
                 if homeview {
-                    PromptView(promptText: CloudKitManager.shared.currentPromptText ?? "nothing today JDKLSJf")
+                    headerView() // shows just the header and 
+                    
+                    PromptView(promptText: CloudKitManager.shared.currentPromptText ?? "For Today's test Prompt this is just a place holder!")
                 }
                     
                     ForEach(posts, id: \.recordID) { post in
@@ -68,6 +70,6 @@ struct PostList: View {
 
 struct PostList_Previews: PreviewProvider {
     static var previews: some View {
-        PostList()
+        PostListView()
     }
 }
