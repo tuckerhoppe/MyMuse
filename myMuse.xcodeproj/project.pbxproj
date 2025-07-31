@@ -7,13 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE7C9B082AD0B137004A134C /* myMuseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C9B072AD0B137004A134C /* myMuseApp.swift */; };
-		FE7C9B0A2AD0B137004A134C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C9B092AD0B137004A134C /* ContentView.swift */; };
+		B15C97612E386597003306EB /* myMuseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C975F2E386597003306EB /* myMuseApp.swift */; };
+		B15C97652E3865B3003306EB /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97622E3865B3003306EB /* CloudKitManager.swift */; };
+		B15C97662E3865B3003306EB /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97632E3865B3003306EB /* ColorsManager.swift */; };
+		B15C977C2E3865CF003306EB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C976D2E3865CF003306EB /* HeaderView.swift */; };
+		B15C977D2E3865CF003306EB /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C976E2E3865CF003306EB /* NavBarView.swift */; };
+		B15C977E2E3865CF003306EB /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C976F2E3865CF003306EB /* ProfileImageView.swift */; };
+		B15C977F2E3865CF003306EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97712E3865CF003306EB /* ContentView.swift */; };
+		B15C97802E3865CF003306EB /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97732E3865CF003306EB /* PostListView.swift */; };
+		B15C97812E3865CF003306EB /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97742E3865CF003306EB /* PostView.swift */; };
+		B15C97822E3865CF003306EB /* PromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97752E3865CF003306EB /* PromptView.swift */; };
+		B15C97832E3865CF003306EB /* WritePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97762E3865CF003306EB /* WritePostView.swift */; };
+		B15C97842E3865CF003306EB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97782E3865CF003306EB /* SignInView.swift */; };
+		B15C97852E3865CF003306EB /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C97792E3865CF003306EB /* UserProfileView.swift */; };
+		FE07F0D62AFEF8920030130B /* PostStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE07F0D52AFEF8920030130B /* PostStruct.swift */; };
+		FE07F0D82AFEFDC80030130B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE07F0D72AFEFDC80030130B /* Model.swift */; };
+		FE1956ED2AEB8284005DF101 /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1956EC2AEB8284005DF101 /* database.swift */; };
+		FE2946E82ADB85C300FE2EEF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2946E72ADB85C300FE2EEF /* CloudKit.framework */; };
 		FE7C9B0C2AD0B139004A134C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE7C9B0B2AD0B139004A134C /* Assets.xcassets */; };
 		FE7C9B0F2AD0B139004A134C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE7C9B0E2AD0B139004A134C /* Preview Assets.xcassets */; };
 		FE7C9B192AD0B13A004A134C /* myMuseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C9B182AD0B13A004A134C /* myMuseTests.swift */; };
 		FE7C9B232AD0B13A004A134C /* myMuseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C9B222AD0B13A004A134C /* myMuseUITests.swift */; };
 		FE7C9B252AD0B13A004A134C /* myMuseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7C9B242AD0B13A004A134C /* myMuseUITestsLaunchTests.swift */; };
+		FEBE966C2C2F4F7D00D02ECD /* workbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBE966B2C2F4F7D00D02ECD /* workbook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +50,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B15C975F2E386597003306EB /* myMuseApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myMuseApp.swift; sourceTree = "<group>"; };
+		B15C97622E3865B3003306EB /* CloudKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		B15C97632E3865B3003306EB /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
+		B15C976D2E3865CF003306EB /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		B15C976E2E3865CF003306EB /* NavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
+		B15C976F2E3865CF003306EB /* ProfileImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
+		B15C97712E3865CF003306EB /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B15C97732E3865CF003306EB /* PostListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
+		B15C97742E3865CF003306EB /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		B15C97752E3865CF003306EB /* PromptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptView.swift; sourceTree = "<group>"; };
+		B15C97762E3865CF003306EB /* WritePostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WritePostView.swift; sourceTree = "<group>"; };
+		B15C97782E3865CF003306EB /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B15C97792E3865CF003306EB /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		FE07F0D52AFEF8920030130B /* PostStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStruct.swift; sourceTree = "<group>"; };
+		FE07F0D72AFEFDC80030130B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FE1956EC2AEB8284005DF101 /* database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
+		FE2946E52ADB85B800FE2EEF /* myMuse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = myMuse.entitlements; sourceTree = "<group>"; };
+		FE2946E72ADB85C300FE2EEF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		FE7C9B042AD0B137004A134C /* myMuse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myMuse.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE7C9B072AD0B137004A134C /* myMuseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMuseApp.swift; sourceTree = "<group>"; };
-		FE7C9B092AD0B137004A134C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FE7C9B0B2AD0B139004A134C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE7C9B0E2AD0B139004A134C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FE7C9B142AD0B13A004A134C /* myMuseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myMuseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +76,8 @@
 		FE7C9B1E2AD0B13A004A134C /* myMuseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myMuseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7C9B222AD0B13A004A134C /* myMuseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMuseUITests.swift; sourceTree = "<group>"; };
 		FE7C9B242AD0B13A004A134C /* myMuseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myMuseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FE9C09B62AF6A7980099175A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FEBE966B2C2F4F7D00D02ECD /* workbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workbook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2946E82ADB85C300FE2EEF /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +106,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B15C97602E386597003306EB /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B15C975F2E386597003306EB /* myMuseApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B15C97642E3865B3003306EB /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B15C97622E3865B3003306EB /* CloudKitManager.swift */,
+				B15C97632E3865B3003306EB /* ColorsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B15C976C2E3865C6003306EB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B15C97702E3865CF003306EB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B15C976D2E3865CF003306EB /* HeaderView.swift */,
+				B15C976E2E3865CF003306EB /* NavBarView.swift */,
+				B15C976F2E3865CF003306EB /* ProfileImageView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B15C97722E3865CF003306EB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B15C97712E3865CF003306EB /* ContentView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B15C97772E3865CF003306EB /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				B15C97732E3865CF003306EB /* PostListView.swift */,
+				B15C97742E3865CF003306EB /* PostView.swift */,
+				B15C97752E3865CF003306EB /* PromptView.swift */,
+				B15C97762E3865CF003306EB /* WritePostView.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		B15C977A2E3865CF003306EB /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B15C97782E3865CF003306EB /* SignInView.swift */,
+				B15C97792E3865CF003306EB /* UserProfileView.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		B15C977B2E3865CF003306EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B15C97702E3865CF003306EB /* Components */,
+				B15C97722E3865CF003306EB /* Main */,
+				B15C97772E3865CF003306EB /* Post */,
+				B15C977A2E3865CF003306EB /* User */,
+			);
+			name = Views;
+			path = myMuse/Views;
+			sourceTree = SOURCE_ROOT;
+		};
+		FE07F0D42AFEF84E0030130B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE07F0D52AFEF8920030130B /* PostStruct.swift */,
+				FE07F0D72AFEFDC80030130B /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE2946E62ADB85C300FE2EEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE2946E72ADB85C300FE2EEF /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FE7C9AFB2AD0B137004A134C = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +204,7 @@
 				FE7C9B172AD0B13A004A134C /* myMuseTests */,
 				FE7C9B212AD0B13A004A134C /* myMuseUITests */,
 				FE7C9B052AD0B137004A134C /* Products */,
+				FE2946E62ADB85C300FE2EEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +221,15 @@
 		FE7C9B062AD0B137004A134C /* myMuse */ = {
 			isa = PBXGroup;
 			children = (
-				FE7C9B072AD0B137004A134C /* myMuseApp.swift */,
-				FE7C9B092AD0B137004A134C /* ContentView.swift */,
+				FE9C09B62AF6A7980099175A /* Info.plist */,
+				FE2946E52ADB85B800FE2EEF /* myMuse.entitlements */,
+				B15C97602E386597003306EB /* App */,
+				FE1956EC2AEB8284005DF101 /* database.swift */,
+				B15C97642E3865B3003306EB /* Managers */,
+				FEBE966B2C2F4F7D00D02ECD /* workbook.swift */,
+				B15C977B2E3865CF003306EB /* Views */,
+				B15C976C2E3865C6003306EB /* ViewModels */,
+				FE07F0D42AFEF84E0030130B /* Models */,
 				FE7C9B0B2AD0B139004A134C /* Assets.xcassets */,
 				FE7C9B0D2AD0B139004A134C /* Preview Content */,
 			);
@@ -257,8 +391,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE7C9B0A2AD0B137004A134C /* ContentView.swift in Sources */,
-				FE7C9B082AD0B137004A134C /* myMuseApp.swift in Sources */,
+				B15C97842E3865CF003306EB /* SignInView.swift in Sources */,
+				FEBE966C2C2F4F7D00D02ECD /* workbook.swift in Sources */,
+				B15C977E2E3865CF003306EB /* ProfileImageView.swift in Sources */,
+				FE1956ED2AEB8284005DF101 /* database.swift in Sources */,
+				B15C97662E3865B3003306EB /* ColorsManager.swift in Sources */,
+				B15C97852E3865CF003306EB /* UserProfileView.swift in Sources */,
+				B15C97652E3865B3003306EB /* CloudKitManager.swift in Sources */,
+				FE07F0D82AFEFDC80030130B /* Model.swift in Sources */,
+				B15C97612E386597003306EB /* myMuseApp.swift in Sources */,
+				B15C977C2E3865CF003306EB /* HeaderView.swift in Sources */,
+				B15C97822E3865CF003306EB /* PromptView.swift in Sources */,
+				B15C977D2E3865CF003306EB /* NavBarView.swift in Sources */,
+				B15C977F2E3865CF003306EB /* ContentView.swift in Sources */,
+				FE07F0D62AFEF8920030130B /* PostStruct.swift in Sources */,
+				B15C97832E3865CF003306EB /* WritePostView.swift in Sources */,
+				B15C97812E3865CF003306EB /* PostView.swift in Sources */,
+				B15C97802E3865CF003306EB /* PostListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,11 +565,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = myMuse/myMuse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"myMuse/Preview Content\"";
+				DEVELOPMENT_TEAM = 7WF7JMYH94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = myMuse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -430,7 +582,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = tucker.myMuse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -444,11 +596,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = myMuse/myMuse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"myMuse/Preview Content\"";
+				DEVELOPMENT_TEAM = 7WF7JMYH94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = myMuse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -458,7 +613,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = tucker.myMuse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

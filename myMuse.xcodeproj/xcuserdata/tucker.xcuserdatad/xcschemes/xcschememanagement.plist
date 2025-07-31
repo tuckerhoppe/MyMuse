@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>myMuse 1.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>myMuse.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FE7C9B032AD0B137004A134C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE7C9B132AD0B13A004A134C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE7C9B1D2AD0B13A004A134C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
