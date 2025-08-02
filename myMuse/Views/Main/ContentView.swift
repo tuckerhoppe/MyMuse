@@ -19,6 +19,8 @@ struct ContentView: View {
     // A single source of truth for which tab is selected
     @State private var selectedTab: Tab = .home
     
+    @ObservedObject var cloudKitManager = CloudKitManager.shared
+    
     // colors
     //@State private var backgroundColor: Color = Color(red: 5 / 255, green: 54 / 255, blue: 80 / 255, opacity: 1.0)
     //@State private var backgroundColor: Color = Color(red: 30 / 255, green: 125 / 255, blue: 159 / 255, opacity: 1.0)
@@ -33,58 +35,36 @@ struct ContentView: View {
     let textColor = ColorsManager.shared.textColorFor
     
     var body: some View {
-            
-        
-//            // VSTACK
-//            VStack {
-//                // PROMPT VIEW populated from database
-//                header()
-//                //Text("My Muse")
-//                    
-//                
-//                   
-//                // SCROLLER populated with POST VIEWs from database
-//                PostListView()
-//                    .background(LinearGradient(gradient: Gradient(colors: ColorsManager.shared.contrastColor), startPoint: .top, endPoint: .bottom))
-//                
-//                // FRAME VIEW post button, explore button, account button
-//                
-//              
-//                
-//               /* Button("Post") {
-//                                isPresentingSecondView.toggle()
-//                        }
-//                        .sheet(isPresented: $isPresentingSecondView) {
-//                                    WritePost(isPresented: $isPresentingSecondView)
-//                            }*/
                 
                 TabView(selection: $selectedTab) {
-                            
-                            // --- Home Tab ---
-                            PostListView() // Your view for the main feed
-                                .tabItem {
-                                    Label("Home", systemImage: "house.fill")
-                                }
-                                .tag(Tab.home)
-
-                            // --- Write Tab ---
-                            WritePostView(isPresented: .constant(false)) // We use .constant here because TabView handles presentation
-                                .tabItem {
-                                    Label("Write", systemImage: "pencil.circle.fill")
-                                }
-                                .tag(Tab.write)
-
-                            // --- Profile Tab ---
-                            UserProfileView() // Your view for the user's profile
-                                .tabItem {
-                                    Label("Profile", systemImage: "person.fill")
-                                }
-                                .tag(Tab.profile)
+                    
+                    // --- Home Tab ---
+                    PostListView(isHomeView: true) // Your view for the main feed
+                        .tabItem {
+                            Label("Home", systemImage: "house.fill")
                         }
-                        // Customize the accent color for the selected tab icon
-                        .accentColor(ColorsManager.shared.accentColor)
+                        .tag(Tab.home)
 
-                
+                    // --- Write Tab ---
+                    WritePostView() // We use .constant here because TabView handles presentation
+                        .tabItem {
+                            Label("Write", systemImage: "pencil.circle.fill")
+                        }
+                        .tag(Tab.write)
+
+                    // --- Profile Tab ---
+                    UserProfileView(
+                        username: cloudKitManager.currentUsername ?? "Not Signed In",
+                        bio: cloudKitManager.currentBio ?? "Sign in to see your bio") // Your view for the user's profile
+                        .tabItem {
+                            Label("Profile", systemImage: "person.fill")
+                        }
+                        .tag(Tab.profile)
+                }
+                // Customize the accent color for the selected tab icon
+                .accentColor(ColorsManager.shared.accentColor)
+
+        
                 //NavBar()
                     
                     

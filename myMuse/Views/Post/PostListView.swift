@@ -4,72 +4,88 @@
 //
 //  Created by Tucker on 10/21/23.
 //
-
 import SwiftUI
 import CloudKit
+import Combine
 
 struct PostListView: View {
-    var homeview: Bool = true
+    // We will manage the data directly in this view.
     @State private var posts: [CKRecord] = []
-    //private let cloudKitManager = CloudKitManager()
+    @State private var promptText: String = "Loading Prompt..."
     
-    // Include a way to make this configurable
+    // This property determines which feed to show.
+    var isHomeView: Bool
+    
     var body: some View {
-       
-            
-            /*List(posts, id: \.recordID) { post in
-                //let promptText = post["Prompt"] as? String
-                let postText = post["Text"] as? String
-                let usersName = post["usersName"] as? String
-                let promptText = post["promptText"] as? String
-                
-                PostView(username: usersName ?? "Anonymous", postText: postText, promptText: promptText)
-            }*/
+        // We use a conditional check to show a loading state.
+        if isHomeView && posts.isEmpty {
+            ProgressView()
+                .onAppear(perform: fetchData) // Use a simple onAppear to load data.
+        } else {
+            // Once data is loaded, show the content.
             ScrollView {
-                if homeview {
-                    headerView() // shows just the header and 
-                    
-                    PromptView(promptText: CloudKitManager.shared.currentPromptText ?? "For Today's test Prompt this is just a place holder!")
-                }
-                    
+                VStack(spacing: 16) {
+                    if isHomeView {
+                        headerView()
+                        
+                        PromptView(promptText: promptText)
+                            .padding()
+                            .background(.ultraThinMaterial)
+                            .cornerRadius(20)
+                            .padding(.horizontal)
+                    }
+
                     ForEach(posts, id: \.recordID) { post in
                         let postText = post["Text"] as? String
                         let usersName = post["usersName"] as? String
-                        let promptText = post["promptText"] as? String
+                        let promptText = post["promptText"]as? String
                         
                         PostView(username: usersName ?? "Anonymous", postText: postText, promptText: promptText)
-                            //.padding() // Add padding between PostViews
                     }
                 }
-            .onAppear {
-                if homeview {
-                    // This part for the home feed is likely fine
-                    CloudKitManager.shared.fetchPosts(withPromptText: CloudKitManager.shared.currentPromptText ?? "Test Prompt") { fetchedPosts in
-                        self.posts = fetchedPosts
-                    }
-                } else {
-                    // --- REVISED CODE FOR USER PROFILE ---
-                    // Safely unwrap the optional user ID
-                    if let currentUserRecordID = CloudKitManager.shared.currentUserRecordID {
-                        // Only fetch posts if a user ID exists
-                        CloudKitManager.shared.fetchUserPosts(forUser: currentUserRecordID) { fetchedPosts in
-                            DispatchQueue.main.async {
-                                self.posts = fetchedPosts
-                            }
-                        }
-                    }
-                    // If there's no user ID, it will now safely do nothing and show an empty list.
-                    // --- END REVISED CODE ---
+                .padding(.vertical)
+            }
+            .scrollIndicators(.hidden)
+            // This is the key: it listens for the "new post" signal and refreshes the data.
+            .onReceive(CloudKitManager.shared.postDidSave) { _ in
+                if isHomeView {
+                    print("New post detected, refreshing home feed...")
+                    fetchData()
                 }
             }
-                
-            
-            
+            // Load data when the view first appears.
+            .onAppear(perform: fetchData)
+        }
+    }
+
+    private func fetchData() {
+        if isHomeView {
+            // Fetch data for the Home feed
+            if let currentPrompt = CloudKitManager.shared.currentPromptText {
+                self.promptText = currentPrompt
+                CloudKitManager.shared.fetchPosts(withPromptText: currentPrompt) { fetchedPosts in
+                    DispatchQueue.main.async {
+                        self.posts = fetchedPosts
+                    }
+                }
+            }
+        } else {
+            // Fetch data for the User Profile feed
+            if let currentUserRecordID = CloudKitManager.shared.currentUserRecordID {
+                CloudKitManager.shared.fetchUserPosts(forUser: currentUserRecordID) { fetchedPosts in
+                    DispatchQueue.main.async {
+                        self.posts = fetchedPosts
+                    }
+                }
+            }
+        }
     }
 }
 
+
+
 struct PostList_Previews: PreviewProvider {
     static var previews: some View {
-        PostListView()
+        PostListView(isHomeView: true)
     }
 }

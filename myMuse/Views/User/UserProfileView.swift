@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct UserProfileView: View {
+    // State variable to control the sheet
+    @State private var isShowingSignIn = false
+    
     var profileImage: Image = Image("turtlerock")
     var username: String = "John Doe"
     var bio: String = "Creativity is Intelligence having fun"
@@ -19,49 +22,87 @@ struct UserProfileView: View {
     let textColor = ColorsManager.shared.textColorBack
     
     var body: some View {
-        VStack(alignment: .center) {
-            HStack {
-                // Enlarged Picture
-                ProfileImageView(image: profileImage, size:75)
-                
-                VStack(alignment: .leading){
-                    // User name
-                    Text(username)
-                        .foregroundColor(textColor)
-                        .font(.headline)
+        
+        
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 24) {
                     
-                    // Bio or quote
-                    Text(bio)
-                        .foregroundColor(textColor)
-                        .font(.caption)
+                    // Profile Header
+                    VStack(spacing: 16) {
+                        ProfileImageView(image: profileImage, size: 80)
+                        
+                        VStack {
+                            Text(username)
+                                .font(.title2)
+                                .fontWeight(.bold)
+                            Text(bio)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
+                        
+                        Divider()
+                        
+                        // Improved Stat Display
+                        HStack {
+                            Spacer()
+                            StatView(value: posts, label: "Posts")
+                            Spacer()
+                            StatView(value: streak, label: "Streak")
+                            Spacer()
+                            StatView(value: followers, label: "Followers")
+                            Spacer()
+                        }
+                        
+                        
+                    }
+                    .padding()
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(20)
+                    .padding(.horizontal)
                     
+                    // The User's Post List
+                    PostListView(isHomeView: false)
                 }
+                .padding(.top)
                 
             }
-            
-            HStack {
-                // followers? With a small base, this might be unnessasacry and counterintuitive
-                Text(String(posts) + " Posts")
-                    .foregroundColor(textColor)
-                // Streak?
-                Text(String(streak) + " Streak")
-                    .foregroundColor(textColor)
-                
-                Text(String(followers) + " Followers")
-                    .foregroundColor(textColor)
+            .navigationTitle("Profile") // Sets the title of the navigation bar
+            .navigationBarTitleDisplayMode(.inline)
+            // Add the Button to the toolbar
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Sign In / Out") {
+                        isShowingSignIn.toggle()
+                    }
+                }
             }
-            
-            
-            // posts populated from user's database
-            // Maybe I should add a posts view?
-            PostListView(homeview: false)
-            NavBar()
+            .sheet(isPresented: $isShowingSignIn) {
+                SignInView()
+            }
         }
-        .background(LinearGradient(gradient: Gradient(colors: ColorsManager.shared.backgroundGradient), startPoint: .top, endPoint: .bottom))
-        
-        
     }
     
+}
+
+
+
+// A small, reusable view for displaying a single statistic
+struct StatView: View {
+    let value: Int
+    let label: String
+
+    var body: some View {
+        VStack {
+            Text(String(value))
+                .font(.headline)
+                .fontWeight(.bold)
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+        }
+    }
 }
 
 struct UserProfileView_Previews: PreviewProvider {

@@ -7,28 +7,30 @@
 
 import Foundation
 import CloudKit
+import Combine
 
-
-class CloudKitManager {
+class CloudKitManager: ObservableObject {
     private let container: CKContainer
     private let publicDatabase: CKDatabase
+    
+    let postDidSave = PassthroughSubject<Void, Never>()
     
     //singleton pattern: This allows an instance be shared throughout the app
     static let shared = CloudKitManager()
     // CURRENT USER
-        var currentUserRecordID: CKRecord.ID? {
+        @Published var currentUserRecordID: CKRecord.ID? {
             didSet {
                 saveCurrentUserRecordID(currentUserRecordID)
             }
         }
 
-        var currentUsername: String? {
+        @Published var currentUsername: String? {
             didSet {
                 saveCurrentUsername(currentUsername)
             }
         }
 
-        var currentBio: String? {
+        @Published var currentBio: String? {
             didSet {
                 saveCurrentBio(currentBio)
             }
@@ -39,7 +41,9 @@ class CloudKitManager {
     // CURRENT PROMPT
     var currentPrompt: CKRecord?
     var currentPromptID: CKRecord.ID?
-    var currentPromptText: String?
+    @Published var currentPromptText: String?
+    
+    
     
     init() {
         container = CKContainer(identifier: "iCloud.myMuseDatabase")
@@ -322,6 +326,16 @@ class CloudKitManager {
             } else {
                 // POST RECORD
                 print("Post Record saved successfully: \(savedRecord?.recordID.recordName ?? "N/A")")
+            }
+            
+            if !recordIsUser, error == nil {
+                // If the saved record was a post and there was no error...
+                print("Post Record saved successfully, sending notification.")
+                
+                // ...send the "new post" signal.
+                DispatchQueue.main.async {
+                    self.postDidSave.send()
+                }
             }
         }
     }
