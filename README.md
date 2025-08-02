@@ -6,7 +6,7 @@ A minimalist creative writing app centered around daily prompts to spark your im
 
 ## 🚀 App Demo
 
-![App Demo GIF](./MyMuseDemo.gif)
+![App Demo GIF](./MyMuseDemoSmall.gif)
 
 ---
 
